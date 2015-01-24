@@ -1,0 +1,22 @@
+
+{
+  parserClass="com.bsl.parser.bslParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="bsl"
+  psiImplClassSuffix="Impl"
+  psiPackage="com.bsl.psi"
+  psiImplPackage="com.bsl.psi.impl"
+
+  elementTypeHolderClass="com.bsl.psi.bslTypes"
+  elementTypeClass="com.bsl.psi.bslElementType"
+  tokenTypeClass="com.bsl.psi.bslTokenType"
+}
+
+simpleFile ::= item_*
+
+private item_ ::= (codeLine|COMMENT|CRLF)
+
+codeLine ::= code | codeLine code
+code ::= X ";"
