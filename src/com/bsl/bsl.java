@@ -8,6 +8,5 @@ public class bsl extends Language {
     private bsl()
     {
         super("BSL");
-
     }
 }
